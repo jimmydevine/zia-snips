@@ -17,6 +17,5 @@ if __name__ == "__main__":
     lang = "EN"
     with Hermes(MQTT_ADDR.encode("ascii")) as h:
         h.skill = skill
-        h.subscribe_intent("tvoff",
-                           tvoff) \
-        .loop_forever()
+        h.subscribe_intent("hermes/intent/tvoff", tvoff)
+        h.loop_forever()
