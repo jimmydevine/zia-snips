@@ -7,6 +7,8 @@ class Skill(object):
 
 
 def tvoff(hermes, intent_message):
+    with open('/tmp/tvoff', 'w') as fp:
+        fp.close()
     current_session_id = intent_message.session_id
     hermes.publish_end_session(current_session_id, res.decode("latin-1"))
 
@@ -17,5 +19,5 @@ if __name__ == "__main__":
     lang = "EN"
     with Hermes(MQTT_ADDR.encode("ascii")) as h:
         h.skill = skill
-        h.subscribe_intent("hermes/intent/jiffe:tvoff", tvoff)
+        h.subscribe_intent("jiffe:tvoff", tvoff)
         h.loop_forever()
