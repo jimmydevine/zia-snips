@@ -14,7 +14,7 @@ class Skill(object):
 
 def tvoff(hermes, intent_message):
     current_session_id = intent_message.session_id
-    hermes.publish_end_session(current_session_id, res.decode("latin-1"))
+    hermes.publish_end_session(current_session_id, 'TV Off')
 
 
 if __name__ == "__main__":
