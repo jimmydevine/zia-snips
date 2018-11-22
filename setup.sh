@@ -19,5 +19,3 @@ fi
 
 
 pip install -r requirements.txt
-
-cp config.ini.default config.ini
